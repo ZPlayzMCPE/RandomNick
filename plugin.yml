@@ -1,6 +1,6 @@
 name: RandomNick
 main: Random\Main
-version: 1.0
+version: 1.1.0
 api: [3.0.0-ALPHA6, 3.0.1]
 author: UltimateDevs & Zeao
 commands:
