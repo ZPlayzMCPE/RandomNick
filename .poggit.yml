@@ -2,6 +2,6 @@
 branches:
 - patch-3
 projects:
-  RandomNick:
+  RandomNicks:
     path: ""
 ...
