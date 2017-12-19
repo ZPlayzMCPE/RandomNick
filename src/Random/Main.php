@@ -22,20 +22,20 @@ class Main extends PluginBase {
   }
   public function action_nick_on($sender){
 		if(count($this->nicks) === 1){
-			$sender->setDisplayName($this->nicks[0]);
-			$sender->setNameTag($this->nicks[0]);
+			$player->setDisplayName($this->nicks[0]);
+			$player->setNameTag($this->nicks[0]);
 			$pName = $sender->getDisplayName();
 			unset($this->nicks[0]);
 			$this->nicks = array_values($this->nicks);
-			$sender->sendMessage(C::BOLD.C::GRAY."[".C::BLUE."Nick".C::GRAY."]".C::YELLOW."Your Nick Name is ".C::BLUE.$player->getDisplayName().C::YELLOW."!");
+			$player->sendMessage(C::BOLD.C::GRAY."[".C::BLUE."Nick".C::GRAY."]".C::YELLOW."Your Nick Name is ".C::BLUE.$player->getDisplayName().C::YELLOW."!");
 		}
 		elseif(count($this->nicks) === 0){
-			$sender->sendMessage(C::BOLD.C::GRAY."[".C::BLUE."Nick".C::GRAY."]".C::RED."No Nick Names Aviable!");
+			$player->sendMessage(C::BOLD.C::GRAY."[".C::BLUE."Nick".C::GRAY."]".C::RED."No Nick Names Aviable!");
 		}
 		else{
 			$nickNum = mt_rand(0, count($this->nicks)-1);
-			$sender->setDisplayName($this->nicks[$nickNum]);
-			$sender->setNameTag($this->nicks[$nickNum]);
+			$player->setDisplayName($this->nicks[$nickNum]);
+			$player->setNameTag($this->nicks[$nickNum]);
 			$pName2 = $sender->getDisplayName();
 			unset($this->nicks[$nickNum]);
 			$this->nicks = array_values($this->nicks);
@@ -49,7 +49,7 @@ class Main extends PluginBase {
 	}
   public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
     switch(strtolower($command->getName())){
-      case "nick":
+      case "vmnick":
         if(strtolower($args[0]) === "on"){
         	$this->action_nick_on($sender);
         }
