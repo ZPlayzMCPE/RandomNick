@@ -1,7 +1,7 @@
 name: RandomNick
 main: Random\Main
-version: 1.1.0
-api: [3.0.0-ALPHA6, 3.0.1]
+version: 2.0.0-B1
+api: [3.0.0-ALPHA9, 3.0.0-ALPHA10]
 author: UltimateDevs & Zeao
 commands:
   vmnick:
