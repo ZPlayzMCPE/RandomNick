@@ -4,9 +4,9 @@ version: 1.1.0
 api: [3.0.0-ALPHA6, 3.0.1]
 author: UltimateDevs & Zeao
 commands:
-  nick:
+  vmnick:
     description: "Nick yourself with a random nickname!"
-    aliases: [n,nickname]
+    aliases: [n, nickname]
     permission: nick
     
 permissions:
