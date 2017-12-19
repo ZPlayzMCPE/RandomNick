@@ -4,9 +4,9 @@ version: 2.0.0
 api: [3.0.0-ALPHA9, 3.0.0-ALPHA10]
 author: VMPE Development Team
 commands:
-  nick:
+  vmnick:
     description: "Nick yourself with a random nickname!"
-    aliases: [n,nickname]
+    aliases: [n, nickname]
     permission: nick
     
 permissions:
