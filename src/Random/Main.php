@@ -40,7 +40,6 @@ class Main extends PluginBase {
 			unset($this->nicks[$nickNum]);
 			$this->nicks = array_values($this->nicks);
 			$player->sendMessage(C::BOLD.C::GRAY."[".C::BLUE."Nick".C::GRAY."]".C::YELLOW."Your Nick Name is ".C::BLUE.$player->getDisplayName().C::YELLOW."!");
-		return true;
 	}
 	public function action_nick_off($player){
 		array_push($this->nicks, $player->getDisplayName());
@@ -48,6 +47,7 @@ class Main extends PluginBase {
 		$player->setNameTag($player->getName());
 	}
   public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+	  return $this->Command->onCommand($sender, $command, $label, $args);
     switch(strtolower($command->getName())){
 	    case "vmnick":
         if ($this->nicks[1] == "on") {
