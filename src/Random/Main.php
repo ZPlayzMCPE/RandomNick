@@ -47,15 +47,16 @@ class Main extends PluginBase {
 		$player->setNameTag($player->getName());
 	}
   public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
-	  return $this->fCommand->onCommand($sender, $command, $label, $args);
     switch(strtolower($command->getName())){
 	    case "vmnick":
         if ($this->nicks[1] == "on") {
         	$this->action_nick_on($sender);
-        }
+        return true;
+		
         elseif ($this->nicks[0] == "off") {
         	$this->action_nick_off($sender);
-        }
+        return true;
+		
         break;
     }
   }
