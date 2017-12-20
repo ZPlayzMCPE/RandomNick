@@ -8,16 +8,16 @@ use pocketmine\Player;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
-use pocketmine\utils\TextFormat as C;
+use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase {
   
   public $nicks = ["LALA", "HUHU", "HAHA", "BubugagaLp", "Binika", "Susages", "Bread", "Apple", "Lips", "BoyGotLove", "Kane", "School", "Lunch", "Dinner", "Breakfast", "Kiss", "Heart", "Newbie", "GirlGotLove", "Sing", "Horns", "Skeps", "YourDad", "YourLove", "Steve", "Skinseed", "off", "on", "ZNon", "SixDays", "Nine", "Songs", "Good", "Bad", "Discord", "Disc"];
   
-  public function onEnable(){
+  public function onEnable(): void{
     $this->getLogger()->info(C::GREEN."Activated!");
   }
-  public function onDisable(){
+  public function onDisable(): void{
     $this->getLogger()->info(C::RED."Deactivated!");
   }
   public function action_nick_on($sender){
