@@ -50,10 +50,10 @@ class Main extends PluginBase {
   public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
     switch(strtolower($command->getName())){
 	    case "vmnick":
-        if ($args[-1] == "on") {
+        if (count($this->nicks) == 1) == "on") {
         	$this->action_nick_on($sender);
         }
-        elseif ($args[0] == "off") {
+        elseif (count($this->nicks) == 0) == "off") {
         	$this->action_nick_off($sender);
         }
         break;
