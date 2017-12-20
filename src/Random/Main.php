@@ -24,7 +24,7 @@ class Main extends PluginBase {
 		if(count($this->nicks) === 1){
 			$player->setDisplayName($this->nicks[0]);
 			$player->setNameTag($this->nicks[0]);
-			$pName = $sender->getDisplayName();
+			$pName = $player->getDisplayName();
 			unset($this->nicks[0]);
 			$this->nicks = array_values($this->nicks);
 			$player->sendMessage(C::BOLD.C::GRAY."[".C::BLUE."Nick".C::GRAY."]".C::YELLOW."Your Nick Name is ".C::BLUE.$player->getDisplayName().C::YELLOW."!");
@@ -36,7 +36,7 @@ class Main extends PluginBase {
 			$nickNum = mt_rand(0, count($this->nicks)-1);
 			$player->setDisplayName($this->nicks[$nickNum]);
 			$player->setNameTag($this->nicks[$nickNum]);
-			$pName2 = $sender->getDisplayName();
+			$pName2 = $player->getDisplayName();
 			unset($this->nicks[$nickNum]);
 			$this->nicks = array_values($this->nicks);
 			$player->sendMessage(C::BOLD.C::GRAY."[".C::BLUE."Nick".C::GRAY."]".C::YELLOW."Your Nick Name is ".C::BLUE.$player->getDisplayName().C::YELLOW."!");
