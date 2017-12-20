@@ -50,8 +50,7 @@ class Main extends PluginBase {
     switch(strtolower($command->getName())){
 	    case "vmnick":
         if ($this->nicks[1] == "on") {
-        	$this->action_nick_on($sender);
-		
+        	$this->action_nick_on($sender);	
 	}	
         elseif ($this->nicks[0] == "off") {
         	$this->action_nick_off($sender);
