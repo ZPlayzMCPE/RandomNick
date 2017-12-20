@@ -20,7 +20,7 @@ class Main extends PluginBase {
   public function onDisable(): void{
     $this->getLogger()->info(C::RED."Deactivated!");
   }
-  public function action_nick_on($sender){
+  public function action_nick_on($player){
 		if(count($this->nicks) === 1){
 			$player->setDisplayName($this->nicks[0]);
 			$player->setNameTag($this->nicks[0]);
@@ -42,7 +42,7 @@ class Main extends PluginBase {
 			$player->sendMessage(C::BOLD.C::GRAY."[".C::BLUE."Nick".C::GRAY."]".C::YELLOW."Your Nick Name is ".C::BLUE.$player->getDisplayName().C::YELLOW."!");
 		}
 	}
-	public function action_nick_off($sender){
+	public function action_nick_off($player){
 		array_push($this->nicks, $player->getDisplayName());
 		$player->setDisplayName($player->getName());
 		$player->setNameTag($player->getName());
