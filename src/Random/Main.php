@@ -14,10 +14,10 @@ class Main extends PluginBase {
   
   public $nicks = ["LALA", "HUHU", "HAHA", "BubugagaLp", "Binika", "Susages", "Bread", "Apple", "Lips", "BoyGotLove", "Kane", "School", "Lunch", "Dinner", "Breakfast", "Kiss", "Heart", "Newbie", "GirlGotLove", "Sing", "Horns", "Skeps", "YourDad", "YourLove", "Steve", "Skinseed", "off", "on", "ZNon", "SixDays", "Nine", "Songs", "Good", "Bad", "Discord", "Disc"];
   
-  public function onEnable(): void{
+  public function onEnable(){
     $this->getLogger()->info(C::GREEN."Activated!");
   }
-  public function onDisable(): void{
+  public function onDisable(){
     $this->getLogger()->info(C::RED."Deactivated!");
   }
   public function action_nick_on($player){
