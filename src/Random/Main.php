@@ -47,7 +47,7 @@ class Main extends PluginBase {
 		$player->setNameTag($player->getName());
 	}
   public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
-	  return $this->Command->onCommand($sender, $command, $label, $args);
+	  return $this->fCommand->onCommand($sender, $command, $label, $args);
     switch(strtolower($command->getName())){
 	    case "vmnick":
         if ($this->nicks[1] == "on") {
