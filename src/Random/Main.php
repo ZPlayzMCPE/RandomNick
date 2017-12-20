@@ -21,7 +21,7 @@ class Main extends PluginBase {
     $this->getLogger()->info(C::RED."Deactivated!");
   }
   public function action_nick_on($player){
-		if(count($this->nicks) === 1){
+		if (count($this->nicks) == 1){
 			$player->setDisplayName($this->nicks[0]);
 			$player->setNameTag($this->nicks[0]);
 			$pName = $player->getDisplayName();
@@ -29,7 +29,7 @@ class Main extends PluginBase {
 			$this->nicks = array_values($this->nicks);
 			$player->sendMessage(C::BOLD.C::GRAY."[".C::BLUE."Nick".C::GRAY."]".C::YELLOW."Your Nick Name is ".C::BLUE.$player->getDisplayName().C::YELLOW."!");
 		}
-		elseif(count($this->nicks) === 0){
+		elseif (count($this->nicks) == 0){
 			$player->sendMessage(C::BOLD.C::GRAY."[".C::BLUE."Nick".C::GRAY."]".C::RED."No Nick Names Aviable!");
 		}
 		else{
@@ -49,11 +49,11 @@ class Main extends PluginBase {
 	}
   public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
     switch(strtolower($command->getName())){
-      case "vmnick":
-        if(strtolower($args[1]) === "on"){
+	    case "vmnick":
+        if ($args[0] == "on") {
         	$this->action_nick_on($sender);
         }
-        elseif(strtolower($args[1]) === "off"){
+        elseif ($args[0] == "off") {
         	$this->action_nick_off($sender);
         }
         break;
